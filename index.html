@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JSON Formatter — format, minify and validate JSON entirely in your browser. No data leaves your device.">
+  <title>JSON Formatter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>JSON Formatter</h1>
+    <p class="subtitle">Format, minify &amp; validate JSON — 100% client-side, nothing leaves your browser.</p>
+  </header>
+
+  <main class="container">
+    <section class="toolbar" aria-label="Actions">
+      <button id="btn-format-2" type="button" class="btn btn-primary">Format (2 spaces)</button>
+      <button id="btn-format-4" type="button" class="btn btn-primary">Format (4 spaces)</button>
+      <button id="btn-minify" type="button" class="btn">Minify</button>
+      <button id="btn-validate" type="button" class="btn">Validate</button>
+      <button id="btn-copy" type="button" class="btn">Copy result</button>
+      <button id="btn-sample" type="button" class="btn">Load sample</button>
+      <button id="btn-clear" type="button" class="btn btn-danger">Clear</button>
+    </section>
+
+    <p class="hint">Tip: press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac) to format with 2-space indent.</p>
+
+    <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+    <section class="panels">
+      <div class="panel">
+        <label for="input">Input JSON</label>
+        <textarea id="input" spellcheck="false" placeholder='Paste your JSON here, e.g. {"name": "Saad", "age": 24}'></textarea>
+      </div>
+      <div class="panel">
+        <label for="output">Result</label>
+        <textarea id="output" readonly spellcheck="false" placeholder="Formatted, minified or validated JSON will appear here."></textarea>
+      </div>
+    </section>
+
+    <section id="stats" class="stats" hidden>
+      <span id="stat-type"></span>
+      <span id="stat-keys"></span>
+      <span id="stat-sizes"></span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Runs entirely in your browser — no server, no API, no tracking.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
